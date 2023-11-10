@@ -1,0 +1,474 @@
+/* 2023-10-11 08:30:24 [10348 ms] */ 
+CREATE DATABASE ALPHA;
+/* 2023-10-11 08:31:03 [58 ms] */ 
+use ALPHA;
+/* 2023-10-11 08:42:26 [3387 ms] */ 
+create table student(studentsID varchar(10) primary key, Fname varchar(12) not null, Lname varchar(12) not null, course varchar(10) not null, DOB varchar(10) not null, DeptNo varchar(10));
+/* 2023-10-11 08:46:51 [258 ms] */ 
+insert student values('M23B13/001', 'KATO', 'JOSE', 'BSIT', '28/08/2000', 'A200');
+/* 2023-10-11 08:48:30 [150 ms] */ 
+insert student values('M23B13/019', 'WAISWA', 'MARK', 'BSCS', '01/08/2001', 'A201');
+/* 2023-10-11 08:49:24 [62 ms] */ 
+insert student values('M23B13/056', 'MUTWA', 'DAVE', 'BSIT', '28/04/2002', 'A200');
+/* 2023-10-11 08:52:10 [138 ms] */ 
+insert student values('M23B13/009', 'NAKU', 'NICOLE', 'CIVIL', '20/09/1999', 'A202');
+/* 2023-10-11 08:55:26 [83 ms] */ 
+insert student values('M23B13/017', 'KWAGALA', 'DAVID', 'BSIT', '15/10/2000', 'A200');
+/* 2023-10-11 08:58:20 [130 ms] */ 
+insert student values('M23B13/011', 'SSENTONGO', 'NICK', 'CIVIL', '24/10/2003', 'A202');
+/* 2023-10-11 09:00:29 [45 ms] */ 
+insert student values('M23B13/004', 'KATUMBA', 'MARK', 'BSCS', '28/05/2001', 'A201');
+/* 2023-10-11 09:02:11 [7 ms] */ 
+select * from student LIMIT 0,100;
+/* 2023-10-11 09:04:31 [399 ms] */ 
+create table Department(DeptNo varchar(10) primary key, name varchar(12));
+/* 2023-10-11 09:05:19 [80 ms] */ 
+desc department;
+/* 2023-10-11 09:07:09 [75 ms] */ 
+insert into department value('A200', 'IT');
+/* 2023-10-11 09:07:52 [140 ms] */ 
+insert into department value('A201', 'COMP SCIENCE');
+/* 2023-10-11 09:08:38 [72 ms] */ 
+insert into department value('A202', 'CIVIL ENG');
+/* 2023-10-11 09:09:16 [7 ms] */ 
+select * from department LIMIT 0,100;
+/* 2023-10-11 09:12:26 [51 ms] */ 
+desc department;
+/* 2023-10-11 09:33:58 [1789 ms] */ 
+select * from department LIMIT 0,100;
+/* 2023-10-11 09:45:33 [35865 ms] */ 
+alter table student add  foreign key(DeptNo) references Department(DeptNo);
+/* 2023-10-11 14:26:29 [5490 ms] */ 
+CREATE DATABASE  OMEGA
+    DEFAULT CHARACTER SET = 'utf8mb4';
+/* 2023-10-11 14:27:02 [110 ms] */ 
+use omega;
+/* 2023-10-11 14:35:49 [2009 ms] */ 
+create table student(studentsID varchar(12)primary key, Fname varchar(10) not null, Lname varchar(10) not null, DOB varchar(12) not null);
+/* 2023-10-11 14:41:07 [237 ms] */ 
+insert into student value('A100', 'SSENTONGO', 'NICHOLAS', '28/08/2000');
+/* 2023-10-11 14:42:21 [124 ms] */ 
+insert into student value('A001', 'SSENTONGO', 'NICHOLAS', '28/08/2000');
+/* 2023-10-11 14:42:23 [80 ms] */ 
+insert into student value('A002', 'KEMIREMBE', 'HAJARAH', '28/09/2001');
+/* 2023-10-11 14:47:17 [82 ms] */ 
+insert into student value('A004', 'SEKISONGE', 'ROBERT', '09/05/2000');
+/* 2023-10-11 14:47:20 [76 ms] */ 
+insert into student value('A005', 'LULE', 'BULE', '20/01/1999');
+/* 2023-10-11 14:47:21 [61 ms] */ 
+insert into student value('A006', 'KATO', 'SETH', '18/04/2000');
+/* 2023-10-11 14:47:25 [104 ms] */ 
+insert into student value('A007', 'WASWA', 'NICK', '14/04/2001');
+/* 2023-10-11 14:47:26 [72 ms] */ 
+insert into student value('A008', 'NANTONGO', 'NORREEN', '05/012/2005');
+/* 2023-10-11 14:47:45 [197 ms] */ 
+show tables;
+/* 2023-10-11 14:51:58 [408 ms] */ 
+create table details(studentsID varchar(12)primary key, Fname varchar(10) not null, Lname varchar(10) not null, DOB varchar(15) not null, nationality varchar(10) not null);
+/* 2023-10-11 14:57:42 [380 ms] */ 
+create table ALPHA(studentsID varchar(12)primary key, Fname varchar(10) not null, Lname varchar(10) not null, DOB varchar(15) not null, nationality varchar(10) not null);
+/* 2023-10-11 14:58:28 [280 ms] */ 
+create table STUDENTDETAILS(studentsID varchar(12)primary key, Fname varchar(10) not null, Lname varchar(10) not null, DOB varchar(15) not null, nationality varchar(10) not null);
+/* 2023-10-11 15:00:06 [105 ms] */ 
+insert into studentdetails value('A001', 'SSENTONGO', 'NICHOLAS', '28/08/2000', 'ugandan');
+/* 2023-10-11 15:04:31 [85 ms] */ 
+insert into studentdetails values('A003', 'MAFABI', 'MALCOM', '28/09/2000', 'ugandan');
+/* 2023-10-11 15:06:25 [205 ms] */ 
+create table parent(parentID varchar(12)primary key, Fname varchar(10) not null, Lname varchar(10) not null, DOB varchar(15) not null, nationality varchar(10) not null);
+/* 2023-10-11 15:10:09 [72 ms] */ 
+insert into parent values('P001','SSALI','GREG','09/09/1984','UGANDAN');
+/* 2023-10-11 15:11:28 [87 ms] */ 
+insert into parent values('P002','NABULIME','WINFRED','01/09/1981','UGANDAN');
+/* 2023-10-11 15:12:04 [89 ms] */ 
+insert into parent values('P003','KUNYA','MARK','02/05/1982','KENYAN');
+/* 2023-10-11 15:12:45 [66 ms] */ 
+insert into parent values('P008','KWAGALA','DAVE','04/06/1989','UGANDAN');
+/* 2023-10-11 15:14:08 [66 ms] */ 
+insert into parent values('P004','SANYU','GIFT','09/05/198O','UGANDAN');
+/* 2023-10-11 15:15:12 [134 ms] */ 
+insert into parent values('P005','MWISO','FUKA','07/02/1979','TANZANIAN');
+/* 2023-10-11 15:15:46 [50 ms] */ 
+insert into parent values('P007','OTTO','FRED','09/12/1984','KENYAN');
+/* 2023-10-11 15:15:47 [32 ms] */ 
+insert into parent values('P006','NAMARA','DORA','01/11/1992','UGANDAN');
+/* 2023-10-11 15:18:20 [798 ms] */ 
+create table child(childID varchar(12)primary key, Fname varchar(10) not null, Lname varchar(10) not null, DOB varchar(15) not null, nationality varchar(10) not null, AccessNo varchar(10) not null);
+/* 2023-10-11 15:20:29 [100 ms] */ 
+insert into child values('C001','KWAGALA','GIFT','04/06/2006','UGANDAN','A98220');
+/* 2023-10-11 15:24:46 [612 ms] */ 
+create table school(schoolID varchar(12)primary key, schoolname varchar(10) not null);
+/* 2023-10-11 15:25:33 [62 ms] */ 
+insert into school values('S001','FAITH');
+/* 2023-10-11 15:26:53 [59 ms] */ 
+insert into school values('S002','UCU');
+/* 2023-10-11 15:27:54 [51 ms] */ 
+insert into school values('S004','KYAMBOGO');
+/* 2023-10-11 15:28:58 [57 ms] */ 
+insert into school values('S008','MIDLAND');
+/* 2023-10-11 15:30:24 [20 ms] */ 
+insert into school values('S007','LINCON');
+/* 2023-10-11 15:30:26 [80 ms] */ 
+insert into school values('S006','SINAI');
+/* 2023-10-11 15:30:31 [90 ms] */ 
+insert into school values('S005','QUALITY');
+/* 2023-10-11 15:34:24 [243 ms] */ 
+create table HOME(HOMEID varchar(12)primary key, Fname varchar(10) not null, Lname varchar(10) not null, DOB varchar(15) not null, nationality varchar(10), district varchar(12));
+/* 2023-10-11 15:37:08 [144 ms] */ 
+insert into HOME value('H001', 'NAKKU', 'MELISA', '28/08/2000','UGANDAN','KAMPALA');
+/* 2023-10-11 15:39:22 [79 ms] */ 
+insert into HOME value('H008', 'NANFUKA', 'SWEET', '13/09/2001','KENYAN','MBALE');
+/* 2023-10-11 15:39:24 [62 ms] */ 
+insert into HOME value('H007', 'KATO', 'MELA', '16/06/2006','UGANDAN','KAMPALA');
+/* 2023-10-11 15:39:59 [91 ms] */ 
+insert into HOME value('H006', 'KULE', 'MOSES', '15/08/2000','UGANDAN','KAMPALA');
+/* 2023-10-11 15:48:43 [75 ms] */ 
+insert into HOME value('H004', 'ABER', 'CHARITY', '18/08/2003','TANZANIAN','KAMPALA');
+/* 2023-10-11 15:48:52 [77 ms] */ 
+insert into HOME value('H003', 'NAKKU', 'MELISA', '28/08/2000','UGANDAN','KAMPALA');
+/* 2023-10-11 15:49:23 [72 ms] */ 
+insert into HOME value('H002', 'NAMATA', 'XARAH', '12/08/2000','UGANDAN','KAMPALA');
+/* 2023-10-11 15:49:28 [44 ms] */ 
+insert into HOME value('H005', 'BBULE', 'SAM', '28/07/2003','UGANDAN','KAMPALA');
+/* 2023-10-11 15:50:11 [98 ms] */ 
+desc table home;
+/* 2023-10-11 15:51:04 [36 ms] */ 
+select * from student LIMIT 0,100;
+/* 2023-10-11 15:51:58 [11 ms] */ 
+desc table parent;
+/* 2023-10-11 15:52:18 [15 ms] */ 
+select * from parent LIMIT 0,100;
+/* 2023-10-11 15:55:11 [5 ms] */ 
+desc table student;
+/* 2023-10-11 15:55:33 [13 ms] */ 
+select * from student LIMIT 0,100;
+/* 2023-10-18 14:34:57 [2532 ms] */ 
+CREATE DATABASE FAVE;
+/* 2023-10-18 14:36:30 [302 ms] */ 
+CREATE DATABASE FAV;
+/* 2023-10-18 14:36:53 [7 ms] */ 
+use FAV;
+/* 2023-10-18 15:02:18 [5161 ms] */ 
+create table TEACHER(DID varchar(5) primary key, Fname varchar(12) NOT NULL, Lname varchar(12) NOT NULL, salary int(10), speciality_code varchar(10), DeptNo varchar(10));
+/* 2023-10-18 15:02:33 [241 ms] */ 
+create table SPECIALITY(speciality_code varchar(5) primary key, name varchar(12)NOT NULL UNIQUE);
+/* 2023-10-18 15:04:29 [202 ms] */ 
+create table DEPARTMENT(DeptNo varchar(10) primary key, name varchar(10) UNIQUE);
+/* 2023-10-18 15:04:39 [157 ms] */ 
+insert into TEACHER value('M002', 'KITYO', 'MALE','600000','10','D1');
+/* 2023-10-18 15:04:47 [79 ms] */ 
+insert into SPECIALITY value('17', 'MATHEMATICS');
+/* 2023-10-18 15:04:49 [108 ms] */ 
+insert into TEACHER value('M003', 'KATWE', 'ETHAN','550000','15','D3');
+/* 2023-10-18 15:04:52 [87 ms] */ 
+insert into SPECIALITY value('10', 'FINE ART');
+/* 2023-10-18 15:04:55 [42 ms] */ 
+insert into SPECIALITY value('15', 'BIOLOGY');
+/* 2023-10-18 15:05:08 [231 ms] */ 
+insert into DEPARTMENT value('D1', 'SCI DEPT');
+/* 2023-10-18 15:05:10 [24 ms] */ 
+insert into DEPARTMENT value('D3', 'ARTS DEPT');
+/* 2023-10-18 15:07:50 [102 ms] */ 
+desc table TEACHER;
+/* 2023-10-18 15:23:47 [113 ms] */ 
+CREATE DATABASE WORK;
+/* 2023-10-18 15:25:07 [13 ms] */ 
+use work;
+/* 2023-10-18 15:25:09 [298 ms] */ 
+create table teacher (DID varchar(12) primary key,FName varchar(12) NOT NULL, LName varchar(12) NOT NULL, salary int, speciality_code varchar(12),DeptNo varchar(12));
+/* 2023-10-18 15:25:15 [278 ms] */ 
+create table SPECIALITY (Speciality_Code varchar(12) primary key, Name varchar(12) NOT NULL unique);
+/* 2023-10-18 15:25:22 [264 ms] */ 
+create table DEPARTMENT( DeptNo varchar(12) primary key, Name varchar(12) Unique);
+/* 2023-10-18 15:25:30 [135 ms] */ 
+insert into teacher values('A01','Ssentongo','Nicholas',1000000, 'F01','D01');
+/* 2023-10-18 15:26:21 [82 ms] */ 
+insert into teacher values('A02','Kemirembe','Hajarah',1000000, 'F02','D01');
+/* 2023-10-18 15:26:55 [90 ms] */ 
+insert into teacher values('A03','Noreen','Nantongo',1000000, 'F03','D01');
+/* 2023-10-18 15:26:59 [219 ms] */ 
+DESC TEACHER;
+/* 2023-10-18 15:27:27 [134 ms] */ 
+insert into speciality values('S01','IT');
+/* 2023-10-18 15:27:28 [116 ms] */ 
+insert into speciality values('S02','DIT');
+/* 2023-10-18 15:27:30 [59 ms] */ 
+insert into speciality values('S03','BSCS');
+/* 2023-10-18 15:27:36 [365 ms] */ 
+insert into department values('DD1','COMPT DEPT');
+/* 2023-10-18 15:27:38 [37 ms] */ 
+insert into department values('DD2','LAW DEPT');
+/* 2023-10-18 15:27:41 [119 ms] */ 
+insert into department values('DD3','ART DEPT');
+/* 2023-10-18 15:27:43 [23 ms] */ 
+SELECT * FROM TEACHER LIMIT 0,100;
+/* 2023-10-18 15:27:49 [12 ms] */ 
+SELECT * FROM DEPARTMENT LIMIT 0,100;
+/* 2023-10-18 15:27:53 [10 ms] */ 
+SELECT * FROM SPECIALITY LIMIT 0,100;
+/* 2023-10-18 15:27:56 [755 ms] */ 
+alter table department add column (section varchar(12));
+/* 2023-10-18 15:28:01 [262 ms] */ 
+update department set section='1' where name='compt dept';
+/* 2023-10-18 15:28:08 [76 ms] */ 
+update department set section='2' where name='law dept';
+/* 2023-10-18 15:28:13 [84 ms] */ 
+update department set section='3' where name='art dept';
+/* 2023-10-18 15:28:15 [72 ms] */ 
+update teacher set fname='surname';
+/* 2023-10-18 15:28:21 [87 ms] */ 
+update teacher set fname='henry' where fname='surname';
+/* 2023-10-18 15:28:24 [13 ms] */ 
+update teacher set fname='hary' where fname='surname';
+/* 2023-10-18 15:28:28 [199 ms] */ 
+alter table teacher rename column fname to Surname;
+/* 2023-10-18 15:28:32 [24 ms] */ 
+desc teacher;
+/* 2023-10-18 16:25:00 [125 ms] */ 
+update teacher set salary = salary + (salary * 0.15);
+/* 2023-10-18 16:25:36 [12 ms] */ 
+SELECT * FROM TEACHER LIMIT 0,100;
+/* 2023-10-18 16:42:51 [85 ms] */ 
+select  * FROM teacher where salary between 400000 and 8000000 LIMIT 0,100;
+/* 2023-10-18 16:59:14 [438 ms] */ 
+desc teacher;
+/* 2023-10-31 21:36:58 [21804 ms] */ 
+CREATE DATABASE FEES_CLEARING_MANAGEMENT_DB;
+/* 2023-10-31 21:37:23 [78 ms] */ 
+use FEES_CLEARING_MANAGEMENT_DB;
+/* 2023-10-31 21:37:29 [2868 ms] */ 
+create table STUDENTS(StudentID varchar(10) PRIMARY KEY,Fname varchar(10) NOT NULL,Lname varchar(10) NOT NULL,Class_name VARCHAR(4) NOT NULL,Residence VARCHAR(12) NOT NULL,Payment_specification varchar(12) ,Payment_code varchar(6)NOT NULL);
+/* 2023-10-31 22:37:00 [103 ms] */ 
+USE fees_CLEARING_MANAGEMENT_DB;
+/* 2023-10-31 22:40:09 [2759 ms] */ 
+create table ENROLLMENT(EnrollmentID varchar(6) PRIMARY KEY,StudentID varchar(10) NOT NULL,Class_name varchar(4) NOT NULL,Enrollment_date varchar(12) NOT NULL );
+/* 2023-10-31 22:41:43 [431 ms] */ 
+create table CLASS(ClassID varchar(6) PRIMARY KEY,Class_name varchar(4) NOT NULL,Class_fee INT NOT NULL, ACADEMIC_LEVEL VARCHAR(10)NOT NULL );
+/* 2023-10-31 22:42:01 [418 ms] */ 
+create table PAYMENT(Payment_code varchar(6) PRIMARY KEY,StudentID varchar(10) NOT NULL,Amount_paid INT NOT NULL,Balance INT NULL,Payment_date varchar(12) NOT NULL);
+/* 2023-10-31 22:43:36 [338 ms] */ 
+create table ADMINISTRATOR(AdminID varchar(6) PRIMARY KEY,Fname varchar(10) NOT NULL,Lname varchar(10) NOT NULL,Position varchar(6) NOT NULL,Contact varchar(12) NOT NULL,StudentID varchar(10)NOT NULL);
+/* 2023-10-31 22:45:05 [402 ms] */ 
+create table STUDENT(StudentID varchar(10) PRIMARY KEY,Fname varchar(10) NOT NULL,Lname varchar(10) NOT NULL,Class_name VARCHAR(4) NOT NULL,Residence VARCHAR(12) NOT NULL,Payment_specification varchar(12)NOT NULL,Payment_code varchar(6)NOT NULL,Academic_level varchar(10) NOT NULL);
+/* 2023-11-01 08:13:59 [1413 ms] */ 
+USE fees_CLEARING_MANAGEMENT_DB;
+/* 2023-11-01 08:40:09 [1463 ms] */ 
+CREATE DATABASE fees_clearing;
+/* 2023-11-01 08:40:18 [7 ms] */ 
+USE fees_clearing;
+/* 2023-11-01 08:40:31 [5549 ms] */ 
+CREATE TABLE students (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_name VARCHAR(50) NOT NULL,
+    registration_number VARCHAR(20) NOT NULL UNIQUE,
+    fee_status ENUM('Paid', 'Outstanding') NOT NULL,
+    last_payment_date DATE,
+    CONSTRAINT chk_fee_status CHECK (fee_status IN ('Paid', 'Outstanding'))
+);
+/* 2023-11-01 08:40:42 [431 ms] */ 
+CREATE TABLE fee_payments (
+    payment_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    payment_amount DECIMAL(10, 2) NOT NULL,
+    payment_date DATE NOT NULL,
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
+/* 2023-11-01 08:41:15 [734 ms] */ 
+INSERT INTO students (student_name, registration_number, fee_status, last_payment_date)
+VALUES
+    ('John Doe', '2023001', 'Paid', '2023-10-15'),
+    ('Jane Smith', '2023002', 'Outstanding', NULL),
+    ('Bob Johnson', '2023003', 'Paid', '2023-10-10');
+/* 2023-11-01 08:41:25 [169 ms] */ 
+INSERT INTO fee_payments (student_id, payment_amount, payment_date)
+VALUES
+    (1, 100.00, '2023-10-15'),
+    (3, 150.00, '2023-10-12');
+/* 2023-11-01 09:15:39 [195 ms] */ 
+use Fees_clearing_management_db;
+/* 2023-11-01 09:17:02 [2339 ms] */ 
+create table PUPIL(
+    StudentID varchar(10) PRIMARY KEY,
+    Fname varchar(10) NOT NULL,
+    Lname varchar(10) NOT NULL,
+    Class_name VARCHAR(4) NOT NULL,
+    Residence VARCHAR(12) NOT NULL,
+    Payment_specification varchar(12) NOT NULL,
+    Payment_code varchar(6) NOT NULL,
+    Academic_level varchar(10) NOT NULL
+);
+/* 2023-11-01 09:17:13 [1440 ms] */ 
+ALTER TABLE PUPIL
+ADD CONSTRAINT UNIQUE_ClassName UNIQUE (Class_name),
+ADD CONSTRAINT UNIQUE_AcademicLevel UNIQUE (Academic_level);
+/* 2023-11-06 16:23:52 [1770 ms] */ 
+CREATE DATABASE WEEK9;
+/* 2023-11-06 16:24:15 [2113 ms] */ 
+CREATE DATABASE WEEK10;
+/* 2023-11-06 16:24:28 [2 ms] */ 
+USE WEEK10;
+/* 2023-11-06 16:37:13 [16466 ms] */ 
+create table BSIT_STUDENTS(
+studentsID varchar(10) primary key not null,
+NAME varchar(12) not null,
+GENDER varchar(12)not null,
+NATIONALITY varchar(12) not null);
+/* 2023-11-06 16:39:13 [720 ms] */ 
+insert into BSIT_STUDENTS values('A98220','KWAGALA','MALE','UGANDAN');
+/* 2023-11-06 16:40:48 [312 ms] */ 
+insert into BSIT_STUDENTS values('A98222','NIKA','FEMALE','TANZANIAN');
+/* 2023-11-06 16:40:50 [145 ms] */ 
+insert into BSIT_STUDENTS values('A98223','GALA','MALE','UGANDAN');
+/* 2023-11-06 16:40:52 [158 ms] */ 
+insert into BSIT_STUDENTS values('A98224','KWALI','MALE','KENYAN');
+/* 2023-11-06 16:42:13 [10 ms] */ 
+select * from BSIT_STUDENTS LIMIT 0,100;
+/* 2023-11-06 16:46:26 [489 ms] */ 
+create view VIEW1 as
+select * from BSIT_STUDENTS;
+/* 2023-11-06 16:46:56 [113 ms] */ 
+select * from VIEW1 LIMIT 0,100;
+/* 2023-11-06 16:52:05 [202 ms] */ 
+create view VIEW2 as
+select * from BSIT_STUDENTS
+where NATIONALITY='UGANDAN';
+/* 2023-11-06 16:52:24 [71 ms] */ 
+select * from VIEW2 LIMIT 0,100;
+/* 2023-11-06 16:57:33 [535 ms] */ 
+create view VIEW3 as
+select NAME, NATIONALITY from BSIT_STUDENTS;
+/* 2023-11-06 16:57:57 [387 ms] */ 
+select * from VIEW3 LIMIT 0,100;
+/* 2023-11-06 17:06:37 [67 ms] */ 
+select name, NATIONALITY,GENDER*7 from BSIT_STUDENTS LIMIT 0,100;
+/* 2023-11-06 17:08:31 [4 ms] */ 
+select GENDER, GENDER*7 as SEX from BSIT_STUDENTS LIMIT 0,100;
+/* 2023-11-06 17:12:04 [231 ms] */ 
+create view VIEW4 as
+select GENDER, GENDER*7 as SEX from BSIT_STUDENTS;
+/* 2023-11-06 17:12:28 [29 ms] */ 
+select * from VIEW4 LIMIT 0,100;
+/* 2023-11-06 17:16:13 [149 ms] */ 
+insert into VIEW1 values('A98226','KITANDWA','MALE','SOMALI');
+/* 2023-11-06 17:16:34 [9 ms] */ 
+select * from VIEW1 LIMIT 0,100;
+/* 2023-11-06 17:19:12 [23 ms] */ 
+select * from BSIT_STUDENTS LIMIT 0,100;
+/* 2023-11-06 18:25:44 [14 ms] */ 
+use Fees_clearing_management_db;
+/* 2023-11-06 18:25:50 [9 ms] */ 
+USE fees_CLEARING_MANAGEMENT_DB;
+/* 2023-11-06 18:27:26 [166 ms] */ 
+CREATE DATABASE sponsorship;
+/* 2023-11-06 18:27:30 [5 ms] */ 
+use sponsorship;
+/* 2023-11-06 18:31:39 [342 ms] */ 
+create table Nursery_sponsored_children(childID varchar(12)primary key not null,
+Fname varchar(12) not null,
+Lname varchar(12) not null,
+DOB varchar(12) not null,
+Nationality varchar(12) not null,
+residence varchar(12) not null);
+/* 2023-11-06 18:35:51 [125 ms] */ 
+insert into Nursery_sponsored_children values('C001','KWAGALAGWE','MARIO','29/09/2020','UGANDAN','REHAB');
+/* 2023-11-06 18:38:04 [68 ms] */ 
+insert into Nursery_sponsored_children values('C002','NANTONGO','MARIS','21/08/2019','UGANDAN','KYAMPISI');
+/* 2023-11-06 18:41:06 [99 ms] */ 
+insert into Nursery_sponsored_children values('C004','NAKKU','HANILAH','19/07/2018','UGANDAN','KYAMPISI');
+/* 2023-11-06 18:41:08 [64 ms] */ 
+insert into Nursery_sponsored_children values('C005','MALIMBO','MARK','02/04/2020','TANZANIAN','REHAB');
+/* 2023-11-06 18:41:41 [44 ms] */ 
+insert into Nursery_sponsored_children values('C006','SIMIYU','NICK','07/08/2020','UGANDAN','REHAB');
+/* 2023-11-06 18:42:18 [64 ms] */ 
+insert into Nursery_sponsored_children values('C007','NANFUKA','MARIAM','30/08/2020','UGANDAN','REHAB');
+/* 2023-11-06 18:42:58 [31 ms] */ 
+select * from Nursery_sponsored_children LIMIT 0,100;
+/* 2023-11-06 18:43:39 [168 ms] */ 
+create table Primary_sponsored_children(childID varchar(12)primary key not null,
+Fname varchar(12) not null,
+Lname varchar(12) not null,
+DOB varchar(12) not null,
+Nationality varchar(12) not null,
+residence varchar(12) not null);
+/* 2023-11-06 18:45:30 [99 ms] */ 
+insert into Primary_sponsored_children values('C008','KUBO','MOSES','28/01/2017','UGANDAN','REHAB');
+/* 2023-11-06 18:47:43 [91 ms] */ 
+insert into Primary_sponsored_children values('C013','NAMATA','XARAH','28/11/2014','UGANDAN','REHAB');
+/* 2023-11-06 18:50:37 [73 ms] */ 
+insert into Primary_sponsored_children values('C012','MUHANJI','MARTIN','11/01/2017','RWANDAN','REHAB');
+/* 2023-11-06 18:50:41 [102 ms] */ 
+insert into Primary_sponsored_children values('C009','TWASE','FIK','01/01/2014','UGANDAN','REHAB');
+/* 2023-11-06 18:50:44 [44 ms] */ 
+insert into Primary_sponsored_children values('C011','NAKAYI','ROSE','28/01/2016','UGANDAN','KYABAKKADE');
+/* 2023-11-06 18:50:53 [58 ms] */ 
+insert into Primary_sponsored_children values('C010','NDUKUKIRE','DORRECK','28/08/2015','RWANDAN','REHAB');
+/* 2023-11-06 18:51:30 [10 ms] */ 
+select * from Primary_sponsored_children LIMIT 0,100;
+/* 2023-11-06 18:52:34 [145 ms] */ 
+create table Secondary_sponsored_children(childID varchar(12)primary key not null,
+Fname varchar(12) not null,
+Lname varchar(12) not null,
+DOB varchar(12) not null,
+Nationality varchar(12) not null,
+residence varchar(12) not null);
+/* 2023-11-06 18:57:27 [86 ms] */ 
+insert into Secondary_sponsored_children values('C014','LUYIMA','RODINE','25/07/2002','UGANDAN','KYAMPISI');
+/* 2023-11-06 18:57:33 [77 ms] */ 
+insert into Secondary_sponsored_children values('C015','NAKYA','JACKLINE','01/12/1999','UGANDAN','KALAGI');
+/* 2023-11-06 18:57:35 [59 ms] */ 
+insert into Secondary_sponsored_children values('C016','LUMALA','NICODEMUS','20/08/2001','UGANDAN','KYABAKKADE');
+/* 2023-11-06 18:57:40 [85 ms] */ 
+insert into Secondary_sponsored_children values('C017','KAWUKI','NESTA','11/11/2001','UGANDAN','KYABAKKADE');
+/* 2023-11-06 18:57:41 [70 ms] */ 
+insert into Secondary_sponsored_children values('C018','SEKISONGE','ROBERT','28/11/2002','UGANDAN','DUNDU');
+/* 2023-11-06 18:58:43 [11 ms] */ 
+select * from Secondary_sponsored_children LIMIT 0,100;
+/* 2023-11-06 18:59:51 [130 ms] */ 
+show tables;
+/* 2023-11-06 19:00:47 [195 ms] */ 
+create table University_sponsored_children(childID varchar(12)primary key not null,
+Fname varchar(12) not null,
+Lname varchar(12) not null,
+DOB varchar(12) not null,
+Nationality varchar(12) not null,
+residence varchar(12) not null);
+/* 2023-11-06 19:05:59 [72 ms] */ 
+insert into University_sponsored_children values('C019','SSENTONGO','NICHOLAS','28/08/2000','UGANDAN','REHAB');
+/* 2023-11-06 19:06:03 [64 ms] */ 
+insert into University_sponsored_children values('C020','KWAGALA','DAVID','18/08/1996','UGANDAN','JINJA');
+/* 2023-11-06 19:06:04 [57 ms] */ 
+insert into University_sponsored_children values('C021','NINSIMA','WHITNEY','29/10/2002','UGANDAN','ENTEBBE');
+/* 2023-11-06 19:06:06 [40 ms] */ 
+insert into University_sponsored_children values('C022','MUHARAJI','NKWILI','05/09/2000','TANZANIAN','REHAB');
+/* 2023-11-06 19:06:08 [71 ms] */ 
+insert into University_sponsored_children values('C023','SEKISONGE','ROBERT','10/11/1998','UGANDAN','DUNDU');
+/* 2023-11-06 19:06:36 [11 ms] */ 
+select * from University_sponsored_children LIMIT 0,100;
+/* 2023-11-06 19:31:59 [179 ms] */ 
+create view UGANDANS as
+select * from University_sponsored_children;
+/* 2023-11-06 19:32:27 [49 ms] */ 
+SELECT * FROM UGANDANS LIMIT 0,100;
+/* 2023-11-06 21:10:26 [15963 ms] */ 
+SELECT Fname, Lname, Nationality FROM University_sponsored_children LIMIT 0,100;
+/* 2023-11-06 21:11:28 [3309 ms] */ 
+DELETE FROM Secondary_sponsored_children
+WHERE childID = 'C014';
+/* 2023-11-06 21:11:36 [883 ms] */ 
+SELECT Fname, Lname
+FROM University_sponsored_children
+WHERE DOB > '2000-01-01' LIMIT 0,100;
+/* 2023-11-06 21:12:31 [16 ms] */ 
+DELETE FROM Secondary_sponsored_children
+WHERE childID = 'C014';
+/* 2023-11-06 21:12:55 [310 ms] */ 
+UPDATE Nursery_sponsored_children
+SET residence = 'New_place'
+WHERE childID = 'C001';
+/* 2023-11-06 21:29:49 [18 ms] */ 
+SELECT Fname, Lname, Nationality
+FROM Secondary_sponsored_children
+WHERE Nationality <> 'UGANDAN' LIMIT 0,100;
+/* 2023-11-06 21:30:31 [5 ms] */ 
+SELECT Fname, Lname, residence
+FROM Secondary_sponsored_children
+WHERE residence = 'REHAB' LIMIT 0,100;
